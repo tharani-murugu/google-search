@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="google">
+         <img src="google-removebg-preview.png"><br>
+        <input id="input">
+        <button onclick="add()">search</button>
+        <div class="deletee">
+            <ul>
+                <li id="list1">
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<style>
+    .container{
+        background-color: antiquewhite;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+    }
+    .google{
+        padding: 4%;
+    }
+    .google img{
+        height: 200px;
+        width: 300px;
+    }
+    .google input{
+        width: 40%;
+        border-radius: 20px;
+        padding: 1%;
+        border: none;
+        font-size: 20px;
+       
+    }
+    .google button{
+        background-color: white;
+        border-color: rgb(205, 202, 202);
+        width: 100px;
+        border-radius: 20px;
+        height: 30%;
+        font-size: 20px;
+        padding: 1%;
+    }
+    .deletee{
+        background-color: white;
+        width: 40%;
+        margin-left: 25%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .deletee button{
+        border-color: rgb(235, 232, 238);
+        height: 1%;
+        width: 6%;
+        margin-left: 70%;
+    }
+    #list1{
+        display: none;
+        font-size: 30px;
+       list-style-type: none;
+       text-align: left;
+    }
+</style>
+<script>
+    var a=document.getElementById("list1")
+    var input=document.getElementById("input")
+
+    function add(){
+     var list2=document.createElement("li")
+     list2.innerHTML=input.value+"<button onclick='del(event)'>x</button>"
+     a.append(list2)
+     a.style.display="block"
+    }
+    function del(event){
+       
+        event.target.parentElement.remove()
+    }
+</script>
+
+
+    
+</body>
+</html>
